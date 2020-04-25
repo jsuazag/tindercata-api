@@ -5,8 +5,6 @@ const catsRoutes = require('./routes/cats')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-//app.get('/', (req, res) => res.send('Hola Mundo'))
-
 app.use('/cats', catsRoutes)
 
 app.listen(5001, () => console.log('Server running'))

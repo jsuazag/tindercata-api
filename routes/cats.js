@@ -1,7 +1,8 @@
 var router = require('express').Router()
+const { login, signup, catList } = require('./../controllers/catsController')
 
-router.post('/login', (req, res) => res.send('Login'))
-router.post('/signup', (req, res) => res.send('Signup'))
-router.get('/list', (req, res) => res.send('list cats'))
+router.get('/login', login)
+router.post('/signup', signup)
+router.get('/list', catList)
 
 module.exports = router
