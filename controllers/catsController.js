@@ -1,6 +1,9 @@
+const { authentication } = require('./../services/catsService')
 
 const login = (req, res) => {
-  res.send('login ctrl')
+  const { email, password } = req.query
+  const response = authentication(email, password)
+  res.json(response)
 }
 
 const signup = (req, res) => {
