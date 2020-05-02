@@ -1,6 +1,8 @@
 const loginService = require('../services/cats/login')
 const signupService = require('../services/cats/signup')
 const addInterestService = require('../services/cats/add-interest')
+const removeInterestService = require('../services/cats/remove-interest')
+const updatePreferencesService = require('../services/cats/update-preferences')
 
 const login = (req, res) => {
   const { email, password } = req.query
@@ -32,12 +34,16 @@ const addInterest = async (req, res) => {
   res.json(response)
 }
 
-const removeInterest = (req, res) => {
-  res.send('remove interest')
+const removeInterest = async (req, res) => {
+  const { catId, interestId } = req.body
+  const response = await removeInterestService(catId, interestId)
+  res.json(response)
 }
 
-const updatePreferences = (req, res) => {
-  res.send('update Preferences')
+const updatePreferences = async (req, res) => {
+  const { catId, preferences } = req.body
+  const response = await updatePreferencesService(catId, preferences)
+  res.json(response)
 }
 
 module.exports = {

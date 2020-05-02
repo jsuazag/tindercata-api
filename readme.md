@@ -7,10 +7,11 @@ GET: /list **
 - POST: /signup
 POST: /like
 POST: /unlike
-∞ POST: /interest
-DELETE: /interest
-PUT: /preferences
+- POST: /interest
+- DELETE: /interest
+∞ PUT: /preferences
 PUT: /bio *
 
 ## Interests
-GET: /interests
+POST: /
+GET: /
