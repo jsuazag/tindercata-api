@@ -9,9 +9,12 @@ POST: /like
 POST: /unlike
 - POST: /interest
 - DELETE: /interest
-∞ PUT: /preferences
+- PUT: /preferences
 PUT: /bio *
 
 ## Interests
-POST: /
-GET: /
+POST: / #ingresar 1
+GET: /  #obtenerlos todos
+
+POST: http://localhost:5001/interest
+GET: http://localhost:5001/interest
