@@ -4,10 +4,10 @@
 ## Cats:
 POST/GET: /login **
 GET: /list **
-POST: /signup
+- POST: /signup
 POST: /like
 POST: /unlike
-POST: /interest
+∞ POST: /interest
 DELETE: /interest
 PUT: /preferences
 PUT: /bio *

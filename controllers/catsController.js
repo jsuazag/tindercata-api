@@ -1,5 +1,6 @@
 const loginService = require('../services/cats/login')
 const signupService = require('../services/cats/signup')
+const addInterestService = require('../services/cats/add-interest')
 
 const login = (req, res) => {
   const { email, password } = req.query
@@ -7,9 +8,10 @@ const login = (req, res) => {
   res.json(response)
 }
 
-const signup = (req, res) => {
-  signupService()
-  res.send('signup ctrl')
+const signup = async (req, res) => {
+  const cat = req.body
+  const response = await signupService(cat)
+  res.json(response)
 }
 
 const catList = (req, res) => {
@@ -24,8 +26,10 @@ const unliked = (req, res) => {
   res.send('unlike')
 }
 
-const addInterest = (req, res) => {
-  res.send('add interest')
+const addInterest = async (req, res) => {
+  const { catId, interestId } = req.body
+  const response = await addInterestService(catId, interestId)
+  res.json(response)
 }
 
 const removeInterest = (req, res) => {
