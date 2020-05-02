@@ -21,10 +21,12 @@ const catList = (req, res) => {
 }
 
 const liked = (req, res) => {
+  // TODO
   res.send('like')
 }
 
 const unliked = (req, res) => {
+  // TODO
   res.send('unlike')
 }
 
