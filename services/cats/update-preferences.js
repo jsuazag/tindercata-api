@@ -1,11 +1,11 @@
 const CatModel = require('../../models/cat')
 
 const updatePreferences = async (catId, preferences) => {
-  try{
+  try {
     const update = { $set: { preferences: preferences } }
     await CatModel.findByIdAndUpdate(catId, update)
     return { status: 1, preferences }
-  }catch(err){
+  } catch (err) {
     return { status: 2, msg: 'Preferences not updated' }
   }
 }

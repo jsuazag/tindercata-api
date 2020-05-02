@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const InterestsSchema = new Schema ({
+const InterestsSchema = new Schema({
   interest: String
 })
 
