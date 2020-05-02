@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const catsRoutes = require('./routes/cats')
 
+require('./connection/mongoConnection')
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 

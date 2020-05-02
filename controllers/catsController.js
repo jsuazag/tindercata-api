@@ -1,4 +1,5 @@
-const loginService = require('../services/cats/login-service')
+const loginService = require('../services/cats/login')
+const signupService = require('../services/cats/signup')
 
 const login = (req, res) => {
   const { email, password } = req.query
@@ -7,6 +8,7 @@ const login = (req, res) => {
 }
 
 const signup = (req, res) => {
+  signupService()
   res.send('signup ctrl')
 }
 
