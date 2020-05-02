@@ -1,5 +1,5 @@
 
-const authentication = (email, password) => {
+const login = (email, password) => {
   if (email === 'nieves@gmail.com' && password === '123') {
     return {
       status: 1,
@@ -11,6 +11,4 @@ const authentication = (email, password) => {
   }
 }
 
-module.exports = {
-  authentication
-}
+module.exports = login
