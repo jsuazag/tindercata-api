@@ -3,6 +3,8 @@ const signupService = require('../services/cats/signup')
 const addInterestService = require('../services/cats/add-interest')
 const removeInterestService = require('../services/cats/remove-interest')
 const updatePreferencesService = require('../services/cats/update-preferences')
+const addLikedService = require('../services/cats/add-liked')
+const addUnlikedService = require('../services/cats/add-unliked')
 
 const login = (req, res) => {
   const { email, password } = req.query
@@ -20,14 +22,16 @@ const catList = (req, res) => {
   res.send('catList ctrl')
 }
 
-const liked = (req, res) => {
-  // TODO
-  res.send('like')
+const liked = async (req, res) => {
+  const { catId, catIdLiked } = req.body
+  const response = await addLikedService(catId, catIdLiked)
+  res.json(response)
 }
 
-const unliked = (req, res) => {
-  // TODO
-  res.send('unlike')
+const unliked = async (req, res) => {
+  const { catId, catIdUnliked } = req.body
+  const response = await addUnlikedService(catId, catIdUnliked)
+  res.json(response)
 }
 
 const addInterest = async (req, res) => {
