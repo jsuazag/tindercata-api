@@ -6,9 +6,9 @@ const updatePreferencesService = require('../services/cats/update-preferences')
 const addLikedService = require('../services/cats/add-liked')
 const addUnlikedService = require('../services/cats/add-unliked')
 
-const login = (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.query
-  const response = loginService(email, password)
+  const response = await loginService(email, password)
   res.json(response)
 }
 
