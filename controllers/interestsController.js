@@ -1,12 +1,15 @@
+const newInterestService = require('../services/interests/new-interest')
+const getAllInterestService = require('../services/interests/get-interests')
 
-const getAll = (req, res) => {
-  // TODO
-  res.send('Get all')
+const getAll = async (req, res) => {
+  const response = await getAllInterestService()
+  res.json(response)
 }
 
-const add = (req, res) => {
-  // TODO
-  res.send('Add Interest')
+const add = async (req, res) => {
+  const interest = req.body // { interest: "Cazar" }
+  const response = await newInterestService(interest)
+  res.json(response)
 }
 
 module.exports = {

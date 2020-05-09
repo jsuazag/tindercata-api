@@ -11,4 +11,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/cats', catsRoutes)
 app.use('/interests', interestRoutes)
 
+const { test }  = require('./test')
+test()
+
 app.listen(5001, () => console.log('Server running'))
