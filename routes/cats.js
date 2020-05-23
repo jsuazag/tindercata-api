@@ -1,4 +1,5 @@
 var router = require('express').Router()
+const authMiddleware = require('../middleware/verify-auth')
 const {
   login, signup, catList,
   liked, unliked, addInterest,
@@ -7,7 +8,7 @@ const {
 
 router.get('/login', login)
 router.post('/signup', signup)
-router.get('/', catList) // devolver la lista de los gatos
+router.get('/', authMiddleware, catList)
 router.post('/liked', liked)
 router.post('/unliked', unliked)
 router.post('/interest', addInterest)
