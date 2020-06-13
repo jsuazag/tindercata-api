@@ -15,6 +15,6 @@ router.post('/liked', liked)
 router.post('/unliked', unliked)
 router.post('/interest', addInterest)
 router.delete('/interest', removeInterest)
-router.put('/preferences', updatePreferences)
+router.put('/preferences', authMiddleware, updatePreferences)
 
 module.exports = router

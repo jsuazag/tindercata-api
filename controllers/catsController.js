@@ -57,7 +57,8 @@ const removeInterest = async (req, res) => {
 }
 
 const updatePreferences = async (req, res) => {
-  const { catId, preferences } = req.body
+  const { preferences } = req.body
+  const { catId } = req.query
   const response = await updatePreferencesService(catId, preferences)
   res.json(response)
 }
